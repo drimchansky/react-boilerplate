@@ -20,25 +20,21 @@ export default [
       'perfectionist/sort-imports': [
         'error',
         {
-          type: 'alphabetical',
-          order: 'asc',
-          ignoreCase: true,
-          specialCharacters: 'keep',
-          internalPattern: ['^@/.+'],
-          partitionByComment: false,
-          partitionByNewLine: false,
-          newlinesBetween: 'always',
-          maxLineLength: undefined,
           groups: [
-            'type',
-            ['builtin', 'external'],
-            'internal-type',
-            'internal',
-            ['parent-type', 'sibling-type', 'index-type'],
-            ['parent', 'sibling', 'index'],
-            'object',
+            'type-import',
+            ['value-builtin', 'value-external'],
+            'type-internal',
+            'value-internal',
+            ['type-parent', 'type-sibling', 'type-index'],
+            ['value-parent', 'value-sibling', 'value-index'],
+            'ts-equals-import',
             'unknown'
-          ]
+          ],
+          ignoreCase: true,
+          internalPattern: ['^@/.+'],
+          newlinesBetween: 1,
+          order: 'asc',
+          type: 'alphabetical'
         }
       ]
     }
